@@ -1,16 +1,22 @@
 /**
  * Configuración central de la marca.
  *
- * IMPORTANTE: los datos de contacto NO están inventados. Se leen de variables
- * de entorno (ver .env.example). Mientras no existan, se usan placeholders
- * claramente identificados y `site.missing` lista lo que falta.
+ * IMPORTANTE: los datos de contacto NO están inventados: son los facilitados
+ * por el negocio (DEFAULTS) y pueden sobrescribirse con variables de entorno
+ * (ver .env.example).
  */
 
 const env = (v: string | undefined) => (v && v.trim() ? v.trim() : undefined);
 
-const phone = env(process.env.NEXT_PUBLIC_PHONE);
+/** Datos de contacto reales facilitados por NEXBCN (las variables de entorno, si existen, tienen prioridad). */
+const DEFAULTS = {
+  phone: "+34611072741",
+  email: "multiserviciosbarcelona99@gmail.com",
+};
+
+const phone = env(process.env.NEXT_PUBLIC_PHONE) ?? DEFAULTS.phone;
 const whatsapp = env(process.env.NEXT_PUBLIC_WHATSAPP) ?? phone;
-const email = env(process.env.NEXT_PUBLIC_EMAIL);
+const email = env(process.env.NEXT_PUBLIC_EMAIL) ?? DEFAULTS.email;
 
 function formatPhone(p?: string) {
   if (!p) return "Teléfono pendiente";
