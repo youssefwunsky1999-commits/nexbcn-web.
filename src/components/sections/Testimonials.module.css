@@ -1,0 +1,5 @@
+.grid { display: grid; gap: 14px; }
+@media (min-width: 768px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+.item { padding: 28px; display: flex; flex-direction: column; gap: 20px; }
+.text { font-size: 1.05rem; line-height: 1.55; color: var(--text); }
+.who { margin-top: auto; font-size: 13.5px; color: var(--text-3); }

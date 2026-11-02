@@ -1,0 +1,16 @@
+.hero { --a: var(--electric-2); position: relative; overflow: hidden; padding: calc(var(--header-h) + clamp(48px, 8vw, 110px)) 0 clamp(64px, 9vw, 120px); }
+.glow { position: absolute; right: -10%; top: -30%; width: 900px; height: 800px; background: radial-gradient(closest-side, color-mix(in srgb, var(--a) 30%, transparent), transparent); pointer-events: none; }
+.inner { position: relative; display: grid; gap: 48px; align-items: center; }
+@media (min-width: 1024px) { .withVisual { grid-template-columns: 1.1fr 1fr; } }
+.copy { display: grid; gap: 22px; justify-items: start; }
+.title { max-width: 18ch; }
+.crumbs ol { display: flex; flex-wrap: wrap; gap: 8px; font-size: 13px; color: var(--d-text-3); }
+.crumbs li + li::before { content: "/"; margin-right: 8px; opacity: .5; }
+.crumbs a:hover { color: #fff; }
+.crumbs [aria-current] { color: var(--d-text-2); }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+@media (max-width: 520px) { .actions { width: 100%; } .actions :global(.btn) { width: 100%; } }
+.visual { position: relative; border-radius: var(--radius-l); overflow: hidden; border: 1px solid var(--d-line-2); background: radial-gradient(500px 300px at 70% 20%, color-mix(in srgb, var(--a) 20%, transparent), transparent), linear-gradient(160deg, #0b1a36, var(--ink)); aspect-ratio: 4 / 3; }
+.visual svg { width: 100%; height: 100%; }
+.seq { animation: ph-rise 1s var(--ease) both; animation-delay: calc(var(--s, 0) * 90ms + 60ms); }
+@keyframes ph-rise { from { opacity: 0; transform: translate3d(0, 16px, 0); } }

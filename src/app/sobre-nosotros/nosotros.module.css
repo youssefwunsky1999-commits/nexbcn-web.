@@ -1,0 +1,6 @@
+.list { border-top: 1px solid var(--line-2); }
+.item { display: grid; gap: 8px 40px; padding: 32px 0; border-bottom: 1px solid var(--line-2); }
+@media (min-width: 900px) { .item { grid-template-columns: 80px 1fr 1.2fr; align-items: baseline; } }
+.n { font-family: var(--font-mono); font-size: 13px; color: var(--electric); }
+.t { font-size: clamp(1.3rem, 2.2vw, 1.8rem); }
+.d { color: var(--text-2); font-size: 1.05rem; }

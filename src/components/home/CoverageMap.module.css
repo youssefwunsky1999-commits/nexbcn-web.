@@ -1,0 +1,33 @@
+.wrap { display: grid; gap: 32px; }
+@media (min-width: 1024px) { .wrap:not(.compact) { grid-template-columns: 1.5fr 1fr; align-items: start; } }
+
+.mapCard { position: relative; border-radius: var(--radius-l); border: 1px solid var(--d-line-2); background: linear-gradient(180deg, #0b1730, #070f20); overflow: hidden; }
+.filters { display: flex; gap: 6px; padding: 14px; overflow-x: auto; border-bottom: 1px solid var(--d-line); scrollbar-width: none; }
+.filters button { flex: none; min-height: 38px; padding: 0 14px; border-radius: 999px; font-size: 13.5px; color: var(--d-text-2); border: 1px solid transparent; transition: all .2s; }
+.filters button:hover { color: #fff; }
+.filters .on { color: #fff; background: rgba(47,107,255,.18); border-color: rgba(77,139,255,.4); }
+.map { width: 100%; height: auto; }
+.note { padding: 12px 16px; font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em; color: var(--d-text-3); border-top: 1px solid var(--d-line); }
+
+.sea { font-family: var(--font-mono); font-size: 10px; letter-spacing: .3em; fill: rgba(45,212,191,.55); }
+.ring { font-family: var(--font-mono); font-size: 9px; letter-spacing: .1em; fill: rgba(169,196,255,.45); }
+.town { transition: opacity .4s var(--ease); cursor: default; }
+.off { opacity: .15; }
+.dot { fill: #9ccbff; stroke: #050b18; stroke-width: 2; transition: r .3s var(--ease), fill .2s; }
+.hot .dot { fill: var(--teal); r: 6px; }
+.baseDot { fill: var(--teal); stroke: #050b18; stroke-width: 2.5; }
+.pulse { fill: none; stroke: var(--teal); stroke-width: 1.5; transform-box: fill-box; transform-origin: center; animation: map-pulse 2.6s var(--ease) infinite; }
+@keyframes map-pulse { from { transform: scale(.4); opacity: .9; } to { transform: scale(2.2); opacity: 0; } }
+.label { font-size: 11px; font-weight: 500; fill: #c9d6f0; paint-order: stroke; stroke: #070f20; stroke-width: 4px; }
+.baseLabel { font-size: 13px; font-weight: 700; fill: #fff; paint-order: stroke; stroke: #070f20; stroke-width: 4px; }
+
+.lists { display: grid; gap: 12px; }
+@media (min-width: 640px) and (max-width: 1023px) { .lists { grid-template-columns: 1fr 1fr; } }
+.area { padding: 20px 22px; border-radius: 18px; border: 1px solid var(--d-line); background: rgba(255,255,255,.02); transition: border-color .3s, background-color .3s; }
+.areaOn { border-color: rgba(77,139,255,.45); background: rgba(47,107,255,.07); }
+.areaTitle { display: inline-flex; gap: 8px; font-weight: 700; color: #fff; font-size: 16px; }
+.areaTitle span { color: var(--teal); transition: transform .3s var(--ease); }
+.areaTitle:hover span { transform: translateX(4px); }
+.area ul { display: flex; flex-wrap: wrap; gap: 4px 14px; margin-top: 10px; font-size: 13.5px; color: var(--d-text-2); }
+.area li { cursor: default; transition: color .2s; }
+.area li:hover { color: var(--teal); }

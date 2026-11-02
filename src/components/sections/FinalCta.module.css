@@ -1,0 +1,6 @@
+.cta { position: relative; overflow: hidden; padding: clamp(96px, 13vw, 180px) 0; text-align: center; border-top: 1px solid var(--d-line); }
+.orb { position: absolute; left: 50%; top: 100%; width: 1400px; height: 1000px; transform: translate(-50%, -50%); border-radius: 50%; background: radial-gradient(closest-side, rgba(47,107,255,.5), rgba(11,42,111,.3) 50%, transparent); filter: blur(10px); pointer-events: none; }
+.inner { position: relative; display: grid; justify-items: center; gap: 22px; }
+.title { font-family: var(--font-display); font-weight: 800; font-size: clamp(2.4rem, 6.4vw, 5.6rem); line-height: .98; letter-spacing: -0.036em; max-width: 14ch; }
+.actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 16px; }
+@media (max-width: 520px) { .actions :global(.btn) { width: 100%; } }
